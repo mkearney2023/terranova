@@ -59,7 +59,7 @@ func NewPlatform(code string, hooks ...terraform.Hook) *Platform {
 	platform.Code = map[string]string{}
 	if len(code) != 0 {
 		var js json.RawMessage
-		var valid_json := json.Unmarshal([]byte(code), &js) == nil
+		valid_json := json.Unmarshal([]byte(code), &js) == nil
 		if valid_json {
 			platform.Code["main.tf.json"] = code
 		} else {
